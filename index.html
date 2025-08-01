@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Interiors - Transform Your Space</title>
+    <meta name="description" content="Professional interior design services for residential, commercial, and outdoor spaces. Custom designs, 3D visualization, and on-time delivery.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-orange': '#FF921C',
+                        'secondary-yellow': '#ECA427',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg transition-all duration-300" id="header">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.jpg" alt="Elite Interiors Logo" class="h-12 w-auto">
+                    <span class="ml-3 text-xl font-bold text-gray-800">Elite Interiors</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Portfolio</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-3 pb-4">
+                    <a href="#home" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Services</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Portfolio</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary-orange transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white relative">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Transform Your Space Into 
+                <span class="text-primary-orange">Something Amazing</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                Professional interior design services that bring your vision to life with custom designs, 3D visualization, and exceptional craftsmanship.
+            </p>
+            <button class="bg-primary-orange hover:bg-secondary-yellow text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" onclick="scrollToSection('contact')">
+                Get Free Consultation
+            </button>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Why Choose Us</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">We deliver exceptional interior design solutions that exceed expectations</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Custom Designs</h3>
+                    <p class="text-gray-600">Tailored solutions that reflect your unique style and preferences</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-secondary-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">On-Time Delivery</h3>
+                    <p class="text-gray-600">We respect your time and deliver projects within agreed timelines</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cube text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">3D Visualization</h3>
+                    <p class="text-gray-600">See your space before it's built with our advanced 3D modeling</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-secondary-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Sustainability</h3>
+                    <p class="text-gray-600">Eco-friendly materials and sustainable design practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive interior design solutions for every space</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Residential Interior -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('images/residential.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">Residential Interior</h3>
+                        <p class="text-gray-600 mb-4">Transform your home into a beautiful, functional space that reflects your personality and lifestyle. From living rooms to bedrooms, we create spaces you'll love.</p>
+                        <button class="bg-primary-orange hover:bg-secondary-yellow text-white px-6 py-2 rounded-full transition-colors duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Outdoor Interior -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('images/outdoor.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">Outdoor Interior</h3>
+                        <p class="text-gray-600 mb-4">Extend your living space outdoors with our innovative outdoor interior designs. Create stunning patios, gardens, and outdoor entertainment areas.</p>
+                        <button class="bg-primary-orange hover:bg-secondary-yellow text-white px-6 py-2 rounded-full transition-colors duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Commercial Interior -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('images/commercial.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3 text-gray-800">Commercial Interior</h3>
+                        <p class="text-gray-600 mb-4">Professional commercial spaces that enhance productivity and create lasting impressions. Offices, retail spaces, and hospitality venues.</p>
+                        <button class="bg-primary-orange hover:bg-secondary-yellow text-white px-6 py-2 rounded-full transition-colors duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Are the Best Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <img src="images/why we are best in industries section.jpg" alt="Why we are the best" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Why We Are the Best in the Industry</h2>
+                    <p class="text-xl text-gray-600 mb-8">Our commitment to excellence and innovation sets us apart from the competition.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-orange rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-award text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">15+ Years Experience</h3>
+                                <p class="text-gray-600">Decades of expertise in creating stunning interior spaces</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary-yellow rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-users text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">500+ Happy Clients</h3>
+                                <p class="text-gray-600">Satisfied customers who trust our design expertise</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary-orange rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-drafting-compass text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Advanced 3D Planning</h3>
+                                <p class="text-gray-600">Cutting-edge technology for precise visualization</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary-yellow rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-recycle text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Sustainable Practices</h3>
+                                <p class="text-gray-600">Environmentally conscious design solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="images/Client icon.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <div class="flex text-secondary-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Elite Interiors transformed our home beyond our wildest dreams. The attention to detail and professionalism was outstanding. Highly recommended!"</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="images/Client icon.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                            <div class="flex text-secondary-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The 3D visualization helped us see exactly how our office would look. The final result exceeded our expectations. Amazing work!"</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="images/Client icon.jpg" alt="Emily Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Emily Rodriguez</h4>
+                            <div class="flex text-secondary-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"From concept to completion, the team was professional and delivered on time. Our restaurant looks absolutely stunning!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Explore our latest projects and see the magic we create</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Portfolio/portfolio 1.jpg" alt="Portfolio Project 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button class="bg-primary-orange text-white px-6 py-2 rounded-full">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Portfolio/portfolio 2.jpg" alt="Portfolio Project 2" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button class="bg-primary-orange text-white px-6 py-2 rounded-full">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="Portfolio/portfolio 3.jpg" alt="Portfolio Project 3" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button class="bg-primary-orange text-white px-6 py-2 rounded-full">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <img src="Portfolio/portfolio 4.jpg" alt="Portfolio Project 4" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button class="bg-primary-orange text-white px-6 py-2 rounded-full">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2" data-aos="fade-up" data-aos-delay="500">
+                    <img src="Portfolio/portfolio 1.jpg" alt="Portfolio Project 5" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button class="bg-primary-orange text-white px-6 py-2 rounded-full">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Subscribe Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ready to transform your space? Let's discuss your project</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Send us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-orange focus:border-transparent transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-orange focus:border-transparent transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-orange focus:border-transparent transition-colors duration-300"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-orange hover:bg-secondary-yellow text-white py-3 rounded-lg font-semibold transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Newsletter & Map -->
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Stay Updated</h3>
+                    <p class="text-gray-600 mb-6">Subscribe to our newsletter for design tips and project updates.</p>
+                    
+                    <form id="newsletter-form" class="mb-8">
+                        <div class="flex">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email" required class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-primary-orange focus:border-transparent transition-colors duration-300">
+                            <button type="submit" class="bg-primary-orange hover:bg-secondary-yellow text-white px-6 py-3 rounded-r-lg font-semibold transition-colors duration-300">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-primary-orange mr-3"></i>
+                            <span class="text-gray-700">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-primary-orange mr-3"></i>
+                            <span class="text-gray-700">info@eliteinteriors.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-primary-orange mr-3"></i>
+                            <span class="text-gray-700">123 Design Street, Creative City, CC 12345</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="mt-8 h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">Interactive Map Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo.jpg" alt="Elite Interiors Logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold">Elite Interiors</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Transforming spaces with innovative design solutions and exceptional craftsmanship.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Portfolio</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Reviews</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Residential Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Commercial Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Outdoor Spaces</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">3D Visualization</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary-orange transition-colors duration-300">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@eliteinteriors.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> 123 Design Street<br>Creative City, CC 12345</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Elite Interiors. All rights reserved. | Designed with ❤️ for beautiful spaces</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
